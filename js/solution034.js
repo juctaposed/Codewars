@@ -8,29 +8,29 @@
 // E: below
 
 // P: Write a function that takes in a String.
-function rot13(message){
+function rot13(message){ //function taking in a message parameter
     // Create a place for the out put to rest. ** Always a good idea to create a place for the new string to reat.
     let newS = ''
     // Change the letters in that original string to be 13 plus. 
     let alpha = 
-        'abcdefghijklmnopqrstuvwxyzabcdefghijklm'  
+        'abcdefghijklmnopqrstuvwxyzabcdefghijklm'  //indexOf will the first instance - thats why we have 13 after z so we dont have to restart it, a shortcut
     let alpha2 = alpha.toUpperCase()
 
     // make a for loop to walk through our original string (message), change the character that you find to +13. 
 
     for (let i = 0; i < message.length; i++){
-        console.log( alpha[alpha.indexOf(message[i] )+ 13] ) 
+        // console.log( alpha[alpha.indexOf(message[i] )+ 13] ) 
         if(alpha.indexOf(message[i].toLowerCase()) === -1){ // determines if the thing in an index is a special char. Ignores it. 
-            newS += message[i]
-         continue 
+            newS += message[i] //adds special character back into empty string newS
+         continue //instead of jumping to the next if statement, fall back to the for loop until if statement isnt true
         }
             
        if  (message[i] ==  alpha[alpha.indexOf(message[i])]){
 
-            newS += alpha[alpha.indexOf(message[i])+13];
-            continue // "continue" will restart a for loop. The opposite of "break;". Return is, as always the end of code. 
+            newS += alpha[alpha.indexOf(message[i]) +13 ]; //find the first instance of the message i. if b = 1, it will turn into 14
+            continue // "continue" will restart a for loop. The opposite of "break;". Return is, as always the end of code. This may tie into Big O Notation (getting the best answer)
         } 
-        newS += alpha2[alpha2.indexOf(message[i])+13]
+        newS += alpha2[alpha2.indexOf(message[i]) + 13]; //using toUpperCase - add the upper case letter to the newS string
 
     }
     return newS
