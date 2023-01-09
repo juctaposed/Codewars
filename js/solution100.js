@@ -1,5 +1,5 @@
 
-// Sum of array singles
+// Sum of array singles -> https://www.codewars.com/kata/59f11118a5e129e591000134
 // INSTRUCTIONS:
 // In this Kata, you will be given an array of numbers in which two numbers occur once and the rest occur only twice. Your task will be to return the sum of the numbers that occur only once.
 
