@@ -20,17 +20,16 @@ class Queue {
 class Stack {
     constructor() {
         this.storage = {}
-        this.head = 0
-        this.tail = 0
+        this.size = 0
     }
-    push(item) {
-        this.storage[this.tail] = item
-        this.tail++
+    push(element) {
+        this.size++
+        this.storage[this.size] = element
     }
     pop() {
-        let removed = this.storage[this.tail]
-        this.tail--
-        delete this.storage[this.tail]
+        let removed = this.storage[this.size]
+        delete this.storage[this.size]
+        this.size--
         return removed
     }
 }
