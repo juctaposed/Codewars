@@ -1,3 +1,4 @@
+// Implement a Queue and a Stack
 class Queue {
     constructor() {
         this.storage = {}
